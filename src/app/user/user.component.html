@@ -1,0 +1,117 @@
+
+
+
+
+
+<div>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+  <!-- Start Left menu area -->
+  <h1></h1>
+  <app-sidebar></app-sidebar>
+  <!-- End Left menu area -->
+  <!-- Start Welcome area -->
+  <div class="all-content-wrapper">
+      <app-topbar></app-topbar>
+    
+      <div class="breadcome-area" style="margin: 20px 0px;width: 100%">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcome-heading">
+                                    <div role="search" class="sr-input-func">
+                                        <input type="text" placeholder="Search..." class="search-int form-control" [(ngModel)]="searchText">
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <ul class="breadcome-menu">
+                                    <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                    </li>
+                                    <li><span class="bread-blod">Dashboard V.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+   
+    <!-- End Left menu area -->
+    <!-- Start Welcome area -->
+          <div class="product-status mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>User Detail</h4>
+                            
+                            <div class="asset-inner">
+                                <table>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>MobileNo</th>
+                                        <th>Email</th>
+                                       
+                                        <th>IMEI</th>
+                                        <th>device_id</th>
+                                     </tr>
+                                     <tr *ngFor="let u of table | grdFilter: {Name: searchText , MobileNo: searchText, Email: searchText}; let i = index;">
+                                        <td style="width: 5%;">{{i+1}}</td>
+                                        <td style="width: 5%;">{{u.Name}}</td>
+                                        <td style="width: 5%;">{{u.MobileNo}}</td>
+                                        <td style="width: 5%;">{{u.Email}}</td>
+                                        <td style="width: 5%;">{{u.IMEI}}</td>
+                                        <td style="width: 5%;">{{u.device_id}}</td>
+                                      </tr>
+                                    
+                                </table>
+                            </div>
+                            <!-- <div class="custom-pagination">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								</ul>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+  
+
+
+
+  
+      <!-- <div class="footer-copyright-area">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="footer-copy-right">
+                          <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+  </div>
+
+</div>

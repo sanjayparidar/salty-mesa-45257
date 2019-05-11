@@ -1,0 +1,128 @@
+
+
+
+
+
+<div>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+  <!-- Start Left menu area -->
+  <h1></h1>
+  <app-sidebar></app-sidebar>
+  <!-- End Left menu area -->
+  <!-- Start Welcome area -->
+  <div class="all-content-wrapper">
+      <app-topbar></app-topbar>
+    
+      <div class="breadcome-area" style="margin: 20px 0px;width: 100%">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcome-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcome-heading">
+                                    <form role="search" class="sr-input-func">
+                                        <input type="text" placeholder="Search..." class="search-int form-control">
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <ul class="breadcome-menu">
+                                    <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                                    </li>
+                                    <li><span class="bread-blod">Dashboard V.1</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Left menu area -->
+   
+    <!-- End Left menu area -->
+    <!-- Start Welcome area -->
+    
+        
+        
+        <div class="product-status mg-b-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="error-pagewrap">
+                        <div class="error-page-int">
+                          <div class="text-center m-b-md custom-login">
+                            <h3>Add User</h3>
+                           
+                          </div>
+                          <div class="content-error">
+                            <div class="hpanel">
+                                        <div class="panel-body">
+                                            <form id="loginForm" class="newForm" #newForm="ngForm"  (ngSubmit)= "onSubmit()">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="email">Username</label>
+                                                    <input type="text" placeholder="example@gmail.com" title="Please enter you username" required  name="email" id="email" class="form-control"  [(ngModel)]="userModel.email">
+                                                    <!-- <span class="help-block small">Your unique username to app</span> -->
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label" for="password">Password</label>
+                                                    <input type="password" title="Please enter your password" placeholder="******" required  name="password" id="password" class="form-control" [(ngModel)]="userModel.password">
+                                                    <!-- <span class="help-block small">Yur strong password</span> -->
+                                                </div>
+                                                <div class="checkbox login-checkbox">
+                                                    <label>
+                                        <input type="checkbox" class="i-checks"> Remember me </label>
+                                                    <!-- <p class="help-block small">(if this is a private computer)</p> -->
+                                                </div>
+                                                <button class="btn btn-success btn-block loginbtn">Add User</button>
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+                          </div>
+                          <div class="text-center login-footer">
+                            <p>Copyright © 2018. All rights reserved.  by Encodesoft LLC<a href=""></a></p>
+                          </div>
+                        </div>   
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+  
+
+
+
+  
+      <!-- <div class="footer-copyright-area">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="footer-copy-right">
+                          <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+  </div>
+
+</div>
