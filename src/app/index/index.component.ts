@@ -62,7 +62,7 @@ public adminearning:any;
         this.myservices.order()
        )
       .subscribe(([res1, res2,res3])=>{
-    
+        console.log("hello")
         this.user=res1
         this.noumberuser=this.user.length;
        this.order=res3
