@@ -14,6 +14,42 @@
   <!-- Start Welcome area -->
   <div class="all-content-wrapper">
       <app-topbar></app-topbar>
+       <!-- modal -->
+       <div>
+          
+          
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cancel Order</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h1>Are you sure ? </h1>
+                
+                <p>Do you really want to Cancel these {{order.Order_id}} Order? This process cannot be undone.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+                 <button type="button" style="color: whitesmoke;" class="btn btn-danger" data-dismiss="modal" (click)="cancel(order.Order_id)" >OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+       <!-- modal -->
+    
+
+
+
+
+
+
     
       <div class="breadcome-area" style="margin: 20px 0px;width: 100%"> 
         <div class="container-fluid">
@@ -67,7 +103,8 @@
                                 <button (click)="addItem(0)" style="margin-left:17px; margin-bottom: 20px; border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Unaccepted</button>      
                                 <button (click)="addItem(1)" style="margin-left:17px;margin-bottom: 20px; border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Accepted by the driver</button>      
                                 <button (click)="addItem(2)" style="margin-left:17px; margin-bottom: 20px;border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Picked Up by the driver </button>      
-                                <button (click)="addItem(3)" style="margin-left:17px; margin-bottom: 20px;border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Delivered By the driver</button>      
+                                <button (click)="addItem(3)" style="margin-left:17px; margin-bottom: 20px;border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Delivered By the driver</button>
+                                <button (click)="addItem(4)" style="margin-left:17px; margin-bottom: 20px;border-color: rgb(25, 85, 173); border-bottom-width: 2px; " class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updateModal">Cancel Order</button>      
                               <!-- <button type="button" (click)="addItem(0)">  Unaccepted </button>
                              
                              
@@ -130,7 +167,9 @@
                                         <td style="width: 5%;">{{u.Landmark}}</td>
                                         <td style="width: 5%;">{{u.Pickup_Date}}</td>
                                         <td style="width: 5%;">{{u.Date}}</td>
-                                      </tr>
+                                        <td style="width: 5%;" *ngIf="u.CurrentStatus==1 || u.CurrentStatus==0"><button type="button" data-toggle="modal" data-target="#exampleModal" (click)="cancelconfermation(u)" style="margin-left:17px;margin-bottom: 20px; border-color: rgb(92, 9, 245); border-bottom-width: 2px; " class="btn btn-danger btn-sm">cancel</button></td>
+                                    
+                                    </tr>
                                   
                                 </table>
                             </div>

@@ -38,6 +38,21 @@ export class MyserviceService {
 
   }
 
+  ordercancel(data){
+    console.log(data)
+    const httpheaders = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Bearer '+localStorage.getItem('token')
+       })
+    };
+    var fb={Order_id:data}
+    
+    
+     
+    return this.http.post('https://floating-brushlands-52313.herokuapp.com/payment/cancel_order',fb,httpheaders)
+  }
+
   pendin_order(){
     const httpheaders = {
       headers: new HttpHeaders({
