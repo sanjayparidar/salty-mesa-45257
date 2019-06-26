@@ -19,7 +19,7 @@ public table:any={};
   )
   this.myservices.transactiondetail(this.transectionid)
   .subscribe(res=>{
-    
+    console.log(res)
     this.table=res
     console.log(this.table)
   })

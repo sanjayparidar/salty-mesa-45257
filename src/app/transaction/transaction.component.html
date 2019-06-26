@@ -55,15 +55,74 @@
      
       <!-- End Left menu area -->
       <!-- Start Welcome area -->
-      
-          
+      <!-- modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:60%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Order Detail</h5>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive">
+                  <table class="table">
+                      <tr>
+                          <th>Charge Id</th>
+                          <td>{{orderdetail.id}}</td>
+                        </tr>
+                        <tr>
+                            <th>Amount</th>
+                            <td>{{orderdetail.amount}}</td>
+                          </tr>
+                          <tr>
+                            <th>Refund Amount </th>
+                            <td>{{orderdetail.amount_refunded}}</td>
+                          </tr>
+                         <tr>
+                             <th>Transaction Id</th>
+                             <td>{{orderdetail.balance_transaction}}</td>
+                         </tr>
+                         <tr>
+                            <th>Payment Status</th>
+                            <td>{{orderdetail.paid}}</td>
+                        </tr>
+                        <tr>
+                            <th>Payment Capture</th>
+                            <td>{{orderdetail.captured}}</td>
+                        </tr>
+                        
+                         
+                            <tr>
+                                <th>Invoice</th>
+                                <td><button (click)="gotoGoogle(orderdetail.receipt_url)">click</button></td>
+                                <!-- <td><a >{{orderdetail.receipt_url}}</a></td> -->
+                                
+                            </tr>   
+                            
+                  </table>
+              </div>
+  
+  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal">ok</button>
+              <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+            
+            </div>
+          </div>
+        </div>
+      </div>
+     
+          <!--modal  -->
           
           <div class="product-status mg-b-15">
               <div class="container-fluid">
                   <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="product-status-wrap">
-                              <h4>User Detail</h4>
+                              <h4>Transaction Detail</h4>
                               
                               <div class="asset-inner">
                                   <table>
@@ -75,8 +134,9 @@
                                        <tr *ngFor="let u of table | grdFilter: {Charge_id: searchText}; let i = index;">
                                           <td style="width: 5%;">{{i+1}}</td>
                                           <!-- <td style="width: 5%;"><a>{{u.Charge_id}}</a></td> -->
-                                          <a routerLink="/detailtransaction/{{u.Charge_id}}">{{u.Charge_id}}</a>
-                                          
+                                          <!-- <button type="button" title="Add firmworks" routerLink="/addfirmsworks">{{u.Charge_id}}</button> -->
+                                          <a data-toggle="modal" data-target="#exampleModal" (click)="orderdeatil(u.Charge_id)">{{u.Charge_id}}</a>
+                                          <!-- routerLink="/detailtransaction/{{u.Charge_id}}" -->
                                         </tr>
                                       
                                   </table>

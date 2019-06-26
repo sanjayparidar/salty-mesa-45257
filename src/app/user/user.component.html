@@ -61,13 +61,13 @@
                             <div class="asset-inner">
                                 <table>
                                     <tr>
-                                        <th>No</th>
+                                        <th>S.No.</th>
                                         <th>Name</th>
-                                        <th>MobileNo</th>
+                                        <th>Mobile</th>
                                         <th>Email</th>
                                        
                                         <th>IMEI</th>
-                                        <th>device_id</th>
+                                        <th>Device Id</th>
                                      </tr>
                                      <tr *ngFor="let u of table | grdFilter: {Name: searchText , MobileNo: searchText, Email: searchText}; let i = index;">
                                         <td style="width: 5%;">{{i+1}}</td>
