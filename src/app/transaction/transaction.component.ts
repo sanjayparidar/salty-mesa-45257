@@ -9,7 +9,7 @@ import { MyserviceService } from '../myservice.service';
 export class TransactionComponent implements OnInit {
 public table:any;
 public searchText:any=""; 
-orderdetail:any;
+orderdetail:any={id:'',amount:'',amount_refunded:'',balance_transaction:'',paid:'',captured:'',receipt_url:''};
   constructor(private myservices: MyserviceService) { }
 
   ngOnInit() {
