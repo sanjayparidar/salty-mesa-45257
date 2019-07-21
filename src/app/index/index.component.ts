@@ -22,6 +22,8 @@ public noumberorder:any;
 public totalprice:any;
 public driverearning:any;
 public adminearning:any;
+public drivercost:any={};
+configurationcost:any={};
   constructor(public myservices:MyserviceService) { }
 
   ngOnInit() {
@@ -59,9 +61,11 @@ public adminearning:any;
     forkJoin(
         this.myservices.user(),
         this.myservices.drivers(),
-        this.myservices.order()
+        this.myservices.order(),
+        this.myservices.get_driver_cost(),
+        this.myservices.get_configuration_of_cost()
        )
-      .subscribe(([res1, res2,res3])=>{
+      .subscribe(([res1, res2,res3,res4,res5])=>{
         console.log("hello")
         this.user=res1
         this.noumberuser=this.user.length;
@@ -79,6 +83,9 @@ public adminearning:any;
      this.driver=res2
      this.noumberdriver=this.driver.length;
       this.noumberorder=this.order.length;
+      console.log("+++++++++++++++++++++++",res4,res5,"++++++++++++++++++++++")
+      this.drivercost=res4[0];
+      this.configurationcost=res5[0];
       // console.log(this.noumberuser,this.noumberdriver,this.noumberorder)
       
 
@@ -86,4 +93,40 @@ public adminearning:any;
  
   }
 
+  
+driverCostModel={_id:"",driver_cost:""};
+configurationCostModel={_id:"",cost:""}
+
+  onSubmit2(data){
+    console.log("hello")
+      this.driverCostModel=data
+      console.log(this.configurationCostModel)
+      this.myservices.configuration_of_cost(this.configurationCostModel)
+      .subscribe(res=>{
+        console.log(res)
+      })
+  
+    }
+  
+    editask_driver(u){
+      console.log(u)
+      this.driverCostModel=u
+     }
+
+  
+     onSubmit1(data){
+      console.log("hello")
+        this.driverCostModel=data
+        console.log(this.driverCostModel)
+        this.myservices.driver_cost(this.driverCostModel)
+        .subscribe(res=>{
+          console.log(res)
+        })
+    
+      }
+    
+      editask_configurationcost(u){
+        console.log(u)
+        this.configurationCostModel=u
+       }
 }

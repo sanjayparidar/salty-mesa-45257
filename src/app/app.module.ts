@@ -24,6 +24,8 @@ import { AuthService } from './auth.service';
 import { TransactionComponent } from './transaction/transaction.component';
 import { DetailstransactionComponent } from './detailstransaction/detailstransaction.component';
 import { UnverifiedDriverComponent } from './unverified-driver/unverified-driver.component';
+import { DriverCostConfigurationComponent } from './driver-cost-configuration/driver-cost-configuration.component';
+import { ConfigurationOfCostComponent } from './configuration-of-cost/configuration-of-cost.component';
 
 
 
@@ -39,7 +41,8 @@ const appRoutes:Routes=[
   {path:"unverified_user",component:UnverifiedUserComponent,canActivate: [AuthGuard]},
   {path:"transaction",component:TransactionComponent,canActivate:[AuthGuard]},
   {path:"detailtransaction/:id",component:DetailstransactionComponent,canActivate:[AuthGuard]},
-  {path:"unverified_driver",component:UnverifiedDriverComponent,canActivate:[AuthGuard]}
+  {path:"unverified_driver",component:UnverifiedDriverComponent,canActivate:[AuthGuard]},
+  {path:"driver_cost_configuration",component:DriverCostConfigurationComponent,canActivate:[AuthGuard]}
 
 ]
 
@@ -60,7 +63,9 @@ const appRoutes:Routes=[
     GrdFilterPipe,
     TransactionComponent,
     DetailstransactionComponent,
-    UnverifiedDriverComponent
+    UnverifiedDriverComponent,
+    DriverCostConfigurationComponent,
+    ConfigurationOfCostComponent
     
     
   ],

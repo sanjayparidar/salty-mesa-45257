@@ -1,3 +1,97 @@
+<!-- modal1 -->
+<div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Update Cost Of configuration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="newForm" #newForm="ngForm">
+              <div class="login-form-body">
+                  <div class="form-gp">
+                      <label for="cost"><b>configuration</b></label>
+                      <input type="number" required #number="ngModel" class="form-control" name="cost" placeholder=""  [(ngModel)]="configurationCostModel.cost">
+                  </div>    
+               <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+            <button type="button" class="btn btn-primary center-block" data-dismiss="modal" (click)="onSubmit2(configurationCostModel)" >Update</button>
+             <!-- <button type="submit" style="color: whitesmoke;" class="btn btn-danger" data-dismiss="modal">Edit</button> -->
+          </div>
+        </div>
+        </form>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+   </div>
+   <!-- modal1 -->
+
+
+<!-- modal2 -->
+
+<div>
+        
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Quentity</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="newForm" #newForm="ngForm">
+                  <div class="login-form-body">
+                      <div class="form-gp">
+                          <label for="driver_cost"><b> Product Discount</b></label>
+                          <input type="number" required #number="ngModel" class="form-control" name="driver_cost" placeholder="Quentity"  [(ngModel)]="driverCostModel.driver_cost">
+                      </div>    
+                   <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Delete</button> -->
+                <button type="button" class="btn btn-primary center-block" data-dismiss="modal" (click)="onSubmit1(driverCostModel)" >Update</button>
+                 <!-- <button type="submit" style="color: whitesmoke;" class="btn btn-danger" data-dismiss="modal">Edit</button> -->
+              </div>
+            </div>
+            </form>
+    
+              </div>
+              
+            </div>
+          </div>
+        </div>
+       </div>
+       
+<!-- modal2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="background:url('assets/img/bluebackground.svg');height:100%;overflow:auto;background-repeat:no-repeat">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -68,6 +162,22 @@
         <div class="col-md-4">
                 <div class="col-sm-2 counter-Txt margin-bot-35 counter-card">Admin Earning <span class="counter-value" data-count="150">{{adminearning | currency:'INR'}}</span></div>   
         </div>
+    
+    </div>
+
+    <div class="row" style="margin-left:5%">
+        <div class="col-md-4" >
+                <div class="col-sm-2 counter-Txt margin-bot-35 counter-card"> Configaraton of cost <span class="counter-value" data-count="150">{{configurationcost.cost}} %</span><span>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal1" (click)="editask_configurationcost(configurationcost)">Update</button>
+
+                </span></div>   
+        </div>
+        <div class="col-md-4">
+                <div class="col-sm-2 counter-Txt margin-bot-35 counter-card"> Configation of Driver Cost <span class="counter-value" data-count="150">{{drivercost.driver_cost}} %</span><span>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal2" (click)="editask_driver(drivercost)">Update</button>
+                </span></div>    
+        </div>
+        
     
     </div>
 <!-- <div class="grey-bg c-no container-fluid"  style="width:90% !important; box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);" >

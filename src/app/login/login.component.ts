@@ -20,6 +20,7 @@ public table:any;
   this.myservices.login(this.userModel)
   .subscribe(res=>{
     this.table=res
+    console.log(this.table)
     if(this.table.token){
       console.log('hello')
       this.auth.sendToken("userLoggedin")

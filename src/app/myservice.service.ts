@@ -66,7 +66,7 @@ export class MyserviceService {
   }
 
   unverified_user(){
-    https://shielded-beach-68250.herokuapp.com/user/get_unverified_users
+    // https://shielded-beach-68250.herokuapp.com/user/get_unverified_users
     const httpheaders = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -116,7 +116,7 @@ export class MyserviceService {
       'Authorization': 'Bearer '+localStorage.getItem('token')
      })
   };
-  return this.http.post('https://shielded-beach-68250.herokuapp.com/user/charge_detail' , fb , httpheaders)
+  return this.http.post('https://shielded-beach-68250.herokuapp.com/user/charge_detail', fb , httpheaders)
  }
 
  unverified_driver(){
@@ -129,4 +129,58 @@ export class MyserviceService {
   return this.http.get('https://shielded-beach-68250.herokuapp.com/driver/get_unverified_user', httpheaders)
 
  }
+ driver_cost(data){
+   var fb={driver_cost_id:data._id,driver_cost:data.driver_cost};
+  // const fb=new FormData();
+  // fb.append("driver_cost_id",data._id);
+  // fb.append("driver_cost",data.driver_cost);
+  const httpheaders = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token')
+     })
+  }
+  
+  return this.http.post('https://shielded-beach-68250.herokuapp.com/driver/driver_cost',fb,httpheaders)
+ }
+ get_driver_cost(){
+
+  const httpheaders = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token')
+     })
+  }
+
+  return this.http.get('https://shielded-beach-68250.herokuapp.com/driver/driver_cost', httpheaders)
+
+ }
+
+ get_configuration_of_cost(){
+  const httpheaders = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token')
+     })
+  }
+  
+  return this.http.get('https://shielded-beach-68250.herokuapp.com/driver/configuration_of_cost', httpheaders)
+ }
+ configuration_of_cost(data){
+   console.log(data)
+   var fb={cost_configuration_id:data._id,cost:data.cost}
+  // const fb=new FormData();
+  // fb.append('cost_configuration_id',data._id)
+  // fb.append('cost',data.cost)
+  const httpheaders = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': 'Bearer '+localStorage.getItem('token')
+     })
+     
+  }
+  return this.http.post('https://shielded-beach-68250.herokuapp.com/driver/configuration_of_cost',fb,httpheaders)
+
+ }
+   
 }
